@@ -1,35 +1,28 @@
 # PasswordGenerator
 # 03 JavaScript: Password Generator
 
-Provide a short description explaining the what, why, and how of your project. Use the following questions as a guide:
-
-- What was your motivation?
-- Why did you build this project? (Note: the answer is not "Because it was a homework assignment.")
-- What problem does it solve?
-- What did you learn?
+This project generates random passwords based on criteria that the user selects. It has a responsive user interface that adapts to multiple screen sizes.
 
 ## Table of Contents
 
-- Index
-- Style
-- Script
+- HTML
+- CSS
+- JavaScipt
 
-## Index
+## HTML
 
-What are the steps required to install your project? Provide a step-by-step description of how to get the development environment running.
+Index HTML page creates a document that allows user to generate a secure password based on user preferences including lower- and uppercase letters, numbers, and/or special characters.
 
-## Style
+## CSS
 
-Provide instructions and examples for use. Include screenshots as needed.
+Style sheet provides a classic color style with a red "Generate Password" button. There is also a dotted line around the generated password. Additionally, there is a flex capability that allows the screen to adapt to multiple screen sizes.
 
-## Scripts
+## JavaScipt
+
+Provides specific criteria to meet secured password length and user choice criteria as described in HTML section. 
 
 Referenced (https://www.owasp.org/index.php/Password_special_characters) for special characters as shown below in screenshot.
     ![alt text](assets/images/specialcharacters.png)
 
 ## Links
 Deployed GitHub Page: https://deven1991.github.io/PwdGenerator/
-
-test
-test
-test
