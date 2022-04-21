@@ -22,9 +22,10 @@ function writePassword() {
 
 // User choose number of characters in password (between 8-128 characters)
 function isproperlength() {
-  passwordlength = prompt("How many characters do you want your password to be? Must be between 8-128 characters:)"); 
+  passwordlength = prompt("How many characters do you want your password to be? Must be between 8-128 characters:)");
   passwordlength = parseInt(passwordlength);
-  console.log (passwordlength)
+  console.log(passwordlength)
+  // Need to add return in passwordlength function
 
   if (passwordlength < 8) {
     window.alert("Password must be between 8-128 characters");
@@ -35,19 +36,51 @@ function isproperlength() {
   }
 }
 
+
+
+
+var randomChar = specialCharacters + numberCharacters + lowercaseCharacters + uppercaseCharacters
+// For loop
+var password = "";
+for (var i = 0; i < passwordlength; i++) {
+  var trueRandom = randomChar[Math.floor(Math.random() * randomChar.length)];
+  password += trueRandom;
+}
+
 // Password is generated from random combination of the above
 function generatePassword() {
-  isproperlength ();
+  isproperlength();
   lowercasecheck = confirm("Do you want lowercase letters in your password?");
   uppercasecheck = confirm("Do you want uppercase letters in your password?");
   numbercheck = confirm("Do you want numbers included in your password?")
   specialcheck = confirm("Do you want special characters in your password?")
 
-// If statements: if four confirms were answered yes or no
-// If yes, include those characters from above (can be array)
-// randomly get characters from list until we have proper length desired (loop)
-// return above
+      // If statements: if four confirms were answered yes or no
+      // If yes, include those characters from above (can be array)
+      if (lowercasecheck === false) {
+        var lowercasecheck = [""];
+      }
+
+      if (uppercasecheck === false) {
+        var uppercasecheck = [""];
+      }
+
+      if (numbercheck === false) {
+        var numbercheck = [""];
+      }
+
+      if (specialcheck === false) {
+        var specialcheck = [""];
+      }
+
+      let writePassword = "";
+      for (let i = 0; i < length; ++i) {
+        let at = Math.floor(Math.random() * (randomwritepassword.length + 1));
+        writePassword += randomwritepassword.charAt(at);
+      }
+      return writePassword;
 }
+
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
 
