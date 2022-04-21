@@ -36,17 +36,6 @@ function isproperlength() {
   }
 }
 
-
-
-
-var randomChar = specialCharacters + numberCharacters + lowercaseCharacters + uppercaseCharacters
-// For loop
-var password = "";
-for (var i = 0; i < passwordlength; i++) {
-  var trueRandom = randomChar[Math.floor(Math.random() * randomChar.length)];
-  password += trueRandom;
-}
-
 // Password is generated from random combination of the above
 function generatePassword() {
   isproperlength();
@@ -55,33 +44,43 @@ function generatePassword() {
   numbercheck = confirm("Do you want numbers included in your password?")
   specialcheck = confirm("Do you want special characters in your password?")
 
-      // If statements: if four confirms were answered yes or no
-      // If yes, include those characters from above (can be array)
-      if (lowercasecheck === false) {
-        var lowercasecheck = [""];
-      }
+  var randomChar = ""
 
-      if (uppercasecheck === false) {
-        var uppercasecheck = [""];
-      }
+    if (lowercasecheck === true) {
+      randomChar += lowercaseCharacters
+    }
 
-      if (numbercheck === false) {
-        var numbercheck = [""];
-      }
+    
+    if (uppercasecheck === true) {
+      randomChar += uppercaseCharacters
+    }
 
-      if (specialcheck === false) {
-        var specialcheck = [""];
-      }
+    
+    if (numbercheck === true) {
+      randomChar += numberCharacters
+    }
+
+    
+    if (specialcheck === true) {
+      randomChar += specialCharacters
+    }
 
       let writePassword = "";
-      for (let i = 0; i < length; ++i) {
-        let at = Math.floor(Math.random() * (randomwritepassword.length + 1));
-        writePassword += randomwritepassword.charAt(at);
+      for (let i = 0; i < passwordlength; ++i) {
+        let at = Math.floor(Math.random() * (passwordlength + 1));
+        writePassword += randomChar.charAt(at);
       }
       return writePassword;
+
+      // var randomChar = specialCharacters + numberCharacters + lowercaseCharacters + uppercaseCharacters
+      // // For loop
+      // var password = "";
+      // for (var i = 0; i < passwordlength; i++) {
+      //   var trueRandom = randomChar[Math.floor(Math.random() * randomChar.length)];
+      //   password += trueRandom;
+      // }
+
 }
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
-
-
