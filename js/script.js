@@ -47,21 +47,25 @@ function generatePassword() {
   var randomChar = ""
 
     if (lowercasecheck === true) {
+    // If user selects lowercase characters, adds lowercase letters to password
       randomChar += lowercaseCharacters
     }
 
     
     if (uppercasecheck === true) {
+      // If user selects uppercase characters, adds uppercase letters to password
       randomChar += uppercaseCharacters
     }
 
     
     if (numbercheck === true) {
+      // If user selects numbers characters, adds numbers  to password
       randomChar += numberCharacters
     }
 
     
     if (specialcheck === true) {
+      // If user selects special characters, adds speical characters to password
       randomChar += specialCharacters
     }
 
@@ -71,15 +75,6 @@ function generatePassword() {
         writePassword += randomChar.charAt(at);
       }
       return writePassword;
-
-      // var randomChar = specialCharacters + numberCharacters + lowercaseCharacters + uppercaseCharacters
-      // // For loop
-      // var password = "";
-      // for (var i = 0; i < passwordlength; i++) {
-      //   var trueRandom = randomChar[Math.floor(Math.random() * randomChar.length)];
-      //   password += trueRandom;
-      // }
-
 }
 
 // Add event listener to generate button
