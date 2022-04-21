@@ -17,9 +17,7 @@ var specialcheck;
 function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
-
   passwordText.value = password;
-
 }
 
 // User choose number of characters in password (between 8-128 characters)
@@ -31,8 +29,7 @@ function isproperlength() {
   if (passwordlength < 8) {
     window.alert("Password must be between 8-128 characters");
     isproperlength();
-  }
-  else if (passwordlength > 128) {
+  } else if (passwordlength > 128) {
     window.alert("Password must be bewteen 8-128 characters");
     isproperlength()
   }
@@ -40,6 +37,7 @@ function isproperlength() {
 
 // Password is generated from random combination of the above
 function generatePassword() {
+  isproperlength ();
   lowercasecheck = confirm("Do you want lowercase letters in your password?");
   uppercasecheck = confirm("Do you want uppercase letters in your password?");
   numbercheck = confirm("Do you want numbers included in your password?")
