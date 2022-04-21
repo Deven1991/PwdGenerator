@@ -24,7 +24,9 @@ function writePassword() {
 
 // User choose number of characters in password (between 8-128 characters)
 function isproperlength() {
-  passwordlength = prompt("How many characters do you want your password to be? Must be between 8-128 characters:)");
+  passwordlength = prompt("How many characters do you want your password to be? Must be between 8-128 characters:)"); 
+  passwordlength = parseInt(passwordlength);
+  console.log (passwordlength)
 
   if (passwordlength < 8) {
     window.alert("Password must be between 8-128 characters");
@@ -36,69 +38,18 @@ function isproperlength() {
   }
 }
 
-// User opts for lowercase
-function islowercase() {
-  lowercasecheck = prompt("Do you want lowercase letters in your password? Type Yes or No)");
-
-  if (lowercasecheck === "yes")
-    return lowercasecheck;
-
-}
-  else if (lowercasecheck === "no")
-  return lowercasecheck;
-  }
-
-// User opts for uppercase
-function isuppercase() {
-  uppercasecheck = prompt("Do you want uppercase letters in your password? Type Yes or No)");
-
-  if (uppercasecheck === "yes")
-    return uppercasecheck;
-
-}else if (uppercasecheck === "no")
-  return uppercasecheck;
-}
-
-// User opts for numbers
-function containsnumericvalues() {
-  numbercheck = prompt("Do you want numbers included in your password? Types Yes or No")
-
-  if (numbercheck === "yes")
-    return numbercheck;
-
-} else if (numbercheck === "no")
-  return numbercheck
-}
-
-// User opts for special characters
-function containsspecialcharacters() {
-  specialcheck = prompt("Do you want special characters in your password? Type Yes or No")
-
-  if (specialcheck === "yes")
-    return specialcheck;
-
-} else if (specialcheck === "no")
-  return specialcheck
-}
-
 // Password is generated from random combination of the above
 function generatePassword() {
+  lowercasecheck = confirm("Do you want lowercase letters in your password?");
+  uppercasecheck = confirm("Do you want uppercase letters in your password?");
+  numbercheck = confirm("Do you want numbers included in your password?")
+  specialcheck = confirm("Do you want special characters in your password?")
 
-  isproperlength();
-  console.log(passwordlength);
-
-  isuppercase();
-  console.log(uppercasecheck);
-
-  containsnumericvalues();
-  console.log(numbercheck);
-
-  containsspecialcharacters();
-  console.log(specialcheck);
-
-  var characters = lowercaseCharacters
+// If statements: if four confirms were answered yes or no
+// If yes, include those characters from above (can be array)
+// randomly get characters from list until we have proper length desired (loop)
+// return above
 }
-
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
 
